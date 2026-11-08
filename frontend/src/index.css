@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #FFF9F4;
+  --color-secondary-bg: #F9EEE8;
+  --color-blush: #EBD2D0;
+  --color-rose-muted: #C58D91;
+  --color-burgundy: #794A50;
+  --color-burgundy-dark: #5e363b;
+  --color-burgundy-light: #945f65;
+  --color-paper: #FFFCF8;
+  --color-text-main: #443438;
+  --color-text-secondary: #8B7777;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-handwriting: "Dancing Script", cursive;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #FFF9F4;
+    color: #443438;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+}
+
+/* Typography Utility Classes */
+.font-cormorant {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+
+/* Tactile Paper Texture & Vintage Accents */
+.paper-texture {
+  background-color: #FFFCF8;
+  background-image: radial-gradient(#C58D91 0.5px, transparent 0.5px), radial-gradient(#794A50 0.4px, #FFFCF8 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  opacity: 0.98;
+}
+
+.paper-sheet {
+  background-color: #FFFCF8;
+  box-shadow: 
+    0 1px 3px rgba(121, 74, 80, 0.05),
+    0 10px 25px -5px rgba(121, 74, 80, 0.08),
+    0 20px 48px -10px rgba(121, 74, 80, 0.12);
+  border: 1px solid rgba(235, 210, 208, 0.45);
+}
+
+.envelope-shadow {
+  box-shadow: 
+    0 12px 35px -8px rgba(121, 74, 80, 0.18),
+    0 4px 12px rgba(68, 52, 56, 0.08);
+}
+
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #945f65, #794A50 65%, #502e33 100%);
+  box-shadow: 
+    0 4px 10px rgba(80, 46, 51, 0.35),
+    inset 0 2px 3px rgba(255, 255, 255, 0.25),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.4);
+}
+
+.washi-tape {
+  background: rgba(235, 210, 208, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(197, 141, 145, 0.4);
+  border-right: 2px dashed rgba(197, 141, 145, 0.4);
+}
+
+/* Subtle Ambient Grain Overlay */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for delicate look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #EBD2D0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C58D91;
+}
